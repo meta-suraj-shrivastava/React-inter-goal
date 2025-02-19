@@ -2,16 +2,15 @@ import './App.css';
 
 function App({productId}) {
 
-  function search(productId, formData) {
-
-    alert(`you have searched for ${formData.get('fullName')} ${productId}`)
+  async function search(formData) {
+    'use server'
+    const productId = formData.get('productId')
+    // await updateCart(productId)
   }
 
-  const searchBind = search.bind(null, productId);
-
   return (
-    <form action={searchBind}>
-      <input name="fullName" type='text'/>
+    <form action={search}>
+      <input name="productId" type='hidden' value={productId}/>
       <button type="submit">Search</button>
     </form>
   );
