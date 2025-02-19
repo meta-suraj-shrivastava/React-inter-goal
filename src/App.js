@@ -1,14 +1,17 @@
 import './App.css';
 
-function App() {
+function App({productId}) {
 
-  const search=(formData)=>{
-    alert(`you have searched for ${formData.get('query')}`)
+  function search(productId, formData) {
+
+    alert(`you have searched for ${formData.get('fullName')} ${productId}`)
   }
 
+  const searchBind = search.bind(null, productId);
+
   return (
-    <form action={search}>
-      <input name="query" />
+    <form action={searchBind}>
+      <input name="fullName" type='text'/>
       <button type="submit">Search</button>
     </form>
   );
