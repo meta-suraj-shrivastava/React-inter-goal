@@ -4,6 +4,7 @@ import { ErrorBoundary } from "react-error-boundary";
 import WelcomeDialog from './components/WelcomeDialog'
 import Page from "./components/Page";
 import Blog from "./components/Blog";
+import Portal from "./components/Portal";
 
 export async function deliverMessage(message) {
   await new Promise((res) => setTimeout(res, 1000));
@@ -68,7 +69,9 @@ export default function App() {
     {/* Context Milestone Component */}
     {/* <Page/> */}
     {/* Fragment Milestone Component */}
-    <Blog />
+    {/* <Blog /> */}
+    {/* Portal milestone Send a react component to the different part of DOM */}
+    <Portal />
     </div>
 );
 }
