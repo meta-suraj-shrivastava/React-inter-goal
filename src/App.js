@@ -3,6 +3,7 @@ import './App.css';
 import { ErrorBoundary } from "react-error-boundary";
 import WelcomeDialog from './components/WelcomeDialog'
 import Page from "./components/Page";
+import Blog from "./components/Blog";
 
 export async function deliverMessage(message) {
   await new Promise((res) => setTimeout(res, 1000));
@@ -61,10 +62,13 @@ export default function App() {
   return (
     <div>
     {/* Composition vs inheritence milestone */}
-    <WelcomeDialog />
+    {/* <WelcomeDialog /> */}
     {/* Form Milestone */}
-    <Thread messages={messages} sendMessage={sendMessage} />
-    <Page/>
+    {/* <Thread messages={messages} sendMessage={sendMessage} /> */}
+    {/* Context Milestone Component */}
+    {/* <Page/> */}
+    {/* Fragment Milestone Component */}
+    <Blog />
     </div>
 );
 }
