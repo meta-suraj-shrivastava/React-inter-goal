@@ -2,6 +2,7 @@ import { useOptimistic, useState, useRef } from "react";
 import './App.css';
 import { ErrorBoundary } from "react-error-boundary";
 import WelcomeDialog from './components/WelcomeDialog'
+import Page from "./components/Page";
 
 export async function deliverMessage(message) {
   await new Promise((res) => setTimeout(res, 1000));
@@ -63,6 +64,7 @@ export default function App() {
     <WelcomeDialog />
     {/* Form Milestone */}
     <Thread messages={messages} sendMessage={sendMessage} />
+    <Page/>
     </div>
 );
 }
